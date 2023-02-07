@@ -155,12 +155,51 @@ const student: People[] = [
 ]
 // ! Tortnchi masala : Eng katta yoshli student ni malumotlarini chiqaring
 
-const names = student
-.filter(student => student.age > 23)
-console.log(names);
+// const names = student
+// .filter(student => student.age > 23)
+// console.log(names);
+
+//  2 usuli
+// let olderStudent: Student = students[0]
+
+// for (const st of students) {
+//     if (olderStudent.age < st.age) {
+//         olderStudent = st
+//     }
+// }
+
+// console.log(olderStudent);
 
 // !Beshinchi masala :Barcha studentlarning science qiymatlarini yigindisini chiqaring
-for(let i=0; i<student.length;i++ ){
-    console.log();
-    
+// 1. Uslub (fori)
+let totalScience: number
+
+totalScience = 0
+
+for (let i = 0; i < students.length; i++) {
+    totalScience += students[i].marks.science
 }
+
+console.log(totalScience);
+
+
+//2. Uslub (for of)
+// totalScience = 0
+
+// for (const st of students) {
+//     totalScience += st.marks.science
+// }
+
+// console.log(totalScience);
+
+// 3. Uslib (forEach)
+
+// totalScience = 0
+
+// students.forEach(st => {
+//     totalScience += st.marks.science
+// })
+
+// 4. Uslub (reduce)
+
+// totalScience = students.reduce((accumulator, st) => accumulator + st.marks.science, 0)
